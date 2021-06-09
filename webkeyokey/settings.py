@@ -21,13 +21,13 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '3d7b+jx1$6c26!ha-djwt2_)utewy(q1&s&p2z8o%)v+n(h6hc'
-# SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '3d7b+jx1$6c26!ha-djwt2_)utewy(q1&s&p2z8o%)v+n(h6hc')
+# SECRET_KEY = '3d7b+jx1$6c26!ha-djwt2_)utewy(q1&s&p2z8o%)v+n(h6hc'
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '3d7b+jx1$6c26!ha-djwt2_)utewy(q1&s&p2z8o%)v+n(h6hc')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-# DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
+# DEBUG = True
+DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
 
 ALLOWED_HOSTS = ['*']
 
@@ -76,7 +76,7 @@ TEMPLATES = [
     },
 ]
 
-# WSGI_APPLICATION = 'webkeyokey.wsgi.application'
+WSGI_APPLICATION = 'webkeyokey.wsgi.application'
 
 
 # Database
@@ -162,6 +162,6 @@ EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
 EMAIL_FILE_PATH = Path(BASE_DIR, "sent_emails")
 
 # # Heroku
-# import dj_database_url
-# db_from_env = dj_database_url.config(conn_max_age=500)
-# DATABASES['default'].update(db_from_env)
+import dj_database_url
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)

@@ -1,0 +1,19 @@
+.container {
+    text-align: center;
+    height: 100%;
+}
+
+.bills {
+    width: 20%;
+    margin: 1rem;
+}
+
+p {
+    font-size: 1.5rem;
+}
+
+h2 {
+    color: green;
+    font-size: 3rem;
+    margin-top: 0.5rem;
+}

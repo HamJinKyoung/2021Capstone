@@ -1,0 +1,97 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{%block content%}
+    <link rel="stylesheet" href="{%static 'main/css/layout/mypage.css'%}">
+    <!-- mypage 시작-->
+    <div class="container">
+        <div class="card_row">
+            <div class="col-lg-6 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body" style="text-align: center;">
+                        <h1 class="card-title">회원정보</h1>
+                        {% if user.is_authenticated %}
+                            <img class="user_img" src="{%static 'main/img/user.png'%}">
+                            <h3>{{user.username}}</h3>
+                            <h3>{{user.email}}</h3>
+                            <h3>{{user.u_id}}</h3>
+                            <h3>{{user.phone}}</h3>
+                        {% endif %}
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 grid-margin stretch-card">
+                <div class="card" style="height:80%;">
+                    <div class="card-body">
+                        <h2 class="card-title">구매물품</h2>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">물품</th>
+                                    <th scope="col">갯수</th>
+                                    <th scope="col">날짜</th>
+                                </tr>
+                            </thead>
+                            {% for por in por_list.all %}
+                                {% if por.orders.count > 0 %}
+
+                                    <tbody>
+                                        {% for or in por.orders.all %}
+                                            <tr>
+                                                <td>{{ or.or_name }}</td>
+                                                <td>{{ or.or_count }}</td>
+                                                <td>{{ por.date|date:"Y-m-d" }}</td>
+                                            </tr>
+                                        </tbody>
+                                    {% endfor %}
+                                {% endif %}
+                            {% endfor %}
+                        </table>
+                        <br>
+                        <br>
+                        <a href="{%url 'checkmenu'%}" class="btn btn-primary">장바구니</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card_row">
+            <div class="col-lg-6 grid-margin stretch-card">
+
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title">올린물품</h2>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">물품</th>
+                                    <th scope="col">가격</th>
+                                    <th scope="col">품절처리</th>
+                                </tr>
+                            </thead>
+                            {% for m in m_list %}
+                                <tbody>
+                                    <tr>
+                                        <td>{{m.m_name}}</td>
+                                        <td>{{m.m_price}}</td>
+                                        <td><a href="{%url 'delete' pk=m.pk%}" class="btn btn-primary">팔렸어요♥</a></td>
+                                    </tr>
+                                </tbody>
+                            {% endfor %}
+                        </table>
+                        <br>
+                        <br>
+                        <a href="{%url 'settingmenu'%}" class="btn btn-primary">상품추가하기</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 grid-margin stretch-card">
+                <div class="card" style="margin-top: -5em; height: 25em;">
+                    <div class="card-body">
+                        <h2 class="card-title">관심도</h2>
+                        <canvas id="pieChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

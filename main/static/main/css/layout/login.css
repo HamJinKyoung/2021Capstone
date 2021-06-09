@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap');
+/* ----------------------------login.html,signup.html---------------------------------------- */
+@import url("//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
+.main-menu ul li a{
+    font-family: 'Roboto Condensed', sans-serif;
+}
+.container_login{
+width:600px;
+margin: auto;
+padding-top: 1em;
+}
+
+.login_text{
+text-align: center;
+margin-bottom: 1em;
+}
+button{
+    margin-top:2em; 
+}
+#my-signin2{
+    margin-top:1em; 
+}
+
+.login>.bg-white{
+    margin:auto;
+    width: 38em;
+    height: 100%;
+    
+}
+.signup>.bg-white{
+    margin: auto;
+    margin-top:30px;
+    width: 40em;
+    padding: 30px;
+    margin-bottom: 30px;
+}
+.sc > input{
+    width: 500px;
+    height: 40px;
+}
+
+
+.login_button{
+    border: 1px solid #5d8222;
+    color: #5d8222;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 8px;
+    padding: 6px 30px 8px;
+    text-transform: capitalize;
+    background-color: transparent;
+    transition: all 0.3s ease 0s;
+    width: 28.5em;
+    text-align:center;
+    margin-left: 50px;
+}
+
+.login_button:hover {
+    border: 1px solid #5d8222;
+    color: #fff;
+    background-color: #5d8222;
+}

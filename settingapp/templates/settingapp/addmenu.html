@@ -1,0 +1,87 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{%static 'main/css/layout/login.css'%}">
+    <link rel="stylesheet" href="{%static 'main/css/layout/product.css'%}">
+{% endblock css %}
+
+{% block content %}
+    <div class="signup">
+        <section id="gtco-welcome" class="bg-white section-padding">
+            <div class="contianer_login">
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="menu_name">
+                        <label for="exampleFormControlInput1">제품이름</label>
+                        <input type="text" class="form-control" name="m_name" value="{{m_name}}"/>
+                    </div>
+                    <br>
+                    <div class="category">
+                        <input type="radio" name="c_id" id="c_id1" value="1">
+                        <label for="c_id1">도서,필기구</label><br>
+                        <input type="radio" name="c_id" id="c_id2" value="2">
+                        <label for="c_id2">생활용품</label><br>
+                        <input type="radio" name="c_id" id="c_id3" value="3">
+                        <label for="c_id3">식료품</label><br>
+                        <input type="radio" name="c_id" id="c_id4" value="4">
+                        <label for="c_id4">욕실용품</label><br>
+                        <input type="radio" name="c_id" id="c_id5" value="5">
+                        <label for="c_id5">주방용품</label><br>
+                        <input type="radio" name="c_id" id="c_id6" value="6">
+                        <label for="c_id6">침구류</label>
+                    </div>
+                    <br>
+                    <div class="information">
+                        <label for="exampleFormControlInput1">제품정보</label>
+                        <textarea
+                            class="form-control"
+                            id="exampleFormControlTextarea1"
+                            placeholder="제품에 대한 간단한 설명을 적어주세요."
+                            rows="3"
+                            name="m_info"
+                            value="{{m_info}}"></textarea>
+                    </div>
+                    <br>
+                    <div class="img">
+                        <label for="exampleFormControlFile1">제품사진</label>
+                        <input
+                            type="file"
+                            class="form-control-file"
+                            id="exampleFormControlFile1"
+                            name="m_img"
+                            value="{{m_img}}"
+                            multiple="multiple"/>
+                    </div>
+                    <br>
+                    <div class="price">
+                        <label for="exampleFormControlSelect2">가격(원)</label>
+                        <div class="input-group-append">
+                            <input type="text" name="m_price" value="{{m_price}}"/>
+                            <span class="input-group-text">₩</span>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="option_check">
+                        <h4>확인</h4>
+                        <label for="exampleFormControlSelect2">직거래가 가능합니까?</label>
+                        <input
+                            type="checkbox"
+                            id="exampleFormControlSelect2"
+                            checked="checked"
+                            switch="none"
+                            name='takeout'
+                            value="True"/>
+                        <!-- <label for="switch"></label> -->
+                    </div>
+                    <br>
+                        <input
+                            href="{% url 'settingmenu' %}"
+                            type="submit"
+                            class="btn btn-success btn-lg btn-block"
+                            value="제품등록하기"></input>
+                </form>
+            </div>
+        </section>
+    </div>
+{% endblock content %}

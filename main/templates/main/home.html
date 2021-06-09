@@ -1,0 +1,324 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <link rel="stylesheet" href="{%static 'main/css/layout/main.css'%}">
+    <link rel="stylesheet" href="{%static 'main/css/layout/login.css'%}">
+
+    <div class="slider-area slider-style-1">
+        <div class="single-slider">
+            <img src="{%static 'main/img/shop.png'%}" style="width: 100%; height: 100%;">
+            <div class="slider-title">
+                <h2 class="animated">SAVERS</h2>
+                {% if user.is_authenticated %}
+                    <br><br><br><br>
+                    <h1>안녕하세요,
+                        {{user.username}}님!</h1>
+
+                {% else %}
+                    <div class="login">
+                        <section id="gtco-welcome">
+                            <div class="container_login">
+                                <form method="POST" action="/signin">
+                                    {% csrf_token %}
+                                    <div class="form-group">
+
+                                        <label for="login_id" placeholder="Input id">ID</label>
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            id="login_id"
+                                            placeholder="이름(학번)"
+                                            name="u_id"
+                                            value="{{u_id}}">
+
+                                    </div>
+
+                                    <div class="form-group">
+
+                                        <label for="login_ps" placeholder="Input password">Password</label>
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            placeholder="비밀번호"
+                                            id="login_ps"
+                                            name="password"
+                                            value="{{password}}">
+
+                                    </div>
+                                    <a><input type="submit" value="로그인" class="login_button" ></input></a>
+                                    </a>
+                                    <br>
+                                </form>
+
+                            </div>
+                        </section>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <div class="count-area count-bg pt-120 pb-90 overly-style">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <div class="single-count mb-30">
+                        <h2 class="count">460</h2>
+                        <span>올라온품목갯수</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="single-count mb-30">
+                        <h2 class="count">2000</h2>
+                        <span>올해거래횟수</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="single-count mb-30">
+                        <h2 class="count">500</h2>
+                        <span>회원수</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="single-count mb-30">
+                        <h2 class="count">960</h2>
+                        <span>누적다운로드</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="service-area gray-bg border-top pt-85 pb-60">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="history-text">
+                        <h2>이번달의 인기 용품</h2>
+                        <p>편하게 거래하세요!<br>지금까지의 거래는 잊어라!<br>편하고 안전하게 즐기세요~</p>
+
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="skill">
+                        <div class="progress">
+                            <div class="lead">도서</div>
+                            <div
+                                class="progress-bar wow fadeInLeft"
+                                data-progress="50%"
+                                style="width: 50%;"
+                                data-wow-duration="1.5s"
+                                data-wow-delay="1.2s">
+                                <span>50%</span>
+                            </div>
+                        </div>
+                        <div class="progress">
+                            <div class="lead">주방용품</div>
+                            <div
+                                class="progress-bar wow fadeInLeft"
+                                data-progress="90%"
+                                style="width: 90%;"
+                                data-wow-duration="1.5s"
+                                data-wow-delay="1.2s">
+                                <span>90%</span>
+                            </div>
+                        </div>
+                        <div class="progress an-rs">
+                            <div class="lead">침구류</div>
+                            <div
+                                class="progress-bar wow fadeInLeft"
+                                data-progress="75%"
+                                style="width: 75%;"
+                                data-wow-duration="1.5s"
+                                data-wow-delay="1.2s">
+                                <span>75%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- service-area start -->
+    <!-- <div class="service-area gray-bg border-top pt-85 pb-60">
+        <div class="container">
+
+            <div class="row justify-content-center pb-3">
+                <div class="col-md-10 heading-section text-center ftco-animate">
+                    <h1>가격별</h1>
+                    <br>
+                    <p>자신이 원하는 가격,원하는 물건을 찾아보세요~</p>
+                    <br></div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 ftco-animate">
+                    <div class="pricing-entry pb-5 text-center">
+                        <div>
+                            <h3 class="mb-4">식료품</h3>
+                            <p>
+                                <span class="price">식료품</span>
+                                <span class="per"></span>
+                            </p>
+                        </div>
+                  <h2>새로운 물건 즐겨보세요</h2>
+
+                    </div>
+                </div>
+                <div class="col-md-3 ftco-animate">
+                    <div class="pricing-entry pb-5 text-center">
+                        <div>
+                            <h3 class="mb-4">식료품</h3>
+                            <p>
+                                <span class="price">식료품</span>
+                                <span class="per"></span>
+                            </p>
+                        </div>
+
+                        <ul>
+                            <a href="{%url 'pay'%}">
+                                <li>0원</li>
+                            </a>
+                            <a href="{%url 'pay'%}">
+                                <li>1000원~10000원</li>
+                            </a>
+                            <a href="{%url 'pay'%}">
+                                <li>100000원이상</li>
+                            </a>
+                            <a href="{%url 'pay'%}">
+                                <li>200000원이상</li>
+                            </a>
+
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="col-md-3 ftco-animate">
+                    <div class="pricing-entry active pb-5 text-center">
+                        <div>
+                            <h3 class="mb-4">식료품</h3>
+                            <p>
+                                <span class="price">식료품</span>
+                                <span class="per"></span>
+                            </p>
+                        </div>
+                        <ul>
+                            <a href="{%url 'pay'%}">
+                                <li>0원</li>
+                            </a>
+                            <a href="{%url 'pay'%}">
+                                <li>1000원~10000원</li>
+                            </a>
+                            <a href="{%url 'pay'%}">
+                                <li>100000원이상</li>
+                            </a>
+                            <a href="{%url 'pay'%}">
+                                <li>200000원이상</li>
+                            </a>
+
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="col-md-3 ftco-animate">
+                    <div class="pricing-entry pb-5 text-center">
+                        <div>
+                            <h3 class="mb-4">식료품</h3>
+                            <p>
+                                <span class="price">식료품</span>
+                                <span class="per"></span>
+                            </p>
+                        </div>
+                        <ul>
+                            <a href="{%url 'pay'%}">
+                                <li>0원</li>
+                            </a>
+                            <a href="{%url 'pay'%}">
+                                <li>1000원~10000원</li>
+                            </a>
+                            <a href="{%url 'pay'%}">
+                                <li>100000원이상</li>
+                            </a>
+                            <a href="{%url 'pay'%}">
+                                <li>200000원이상</li>
+                            </a>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div> -->
+    <!-- portfolio start -->
+    <div id="PRODUCT">
+        <div class="portfolio-area ptb-90">
+            <div class="container">
+                <div class="section-title text-center">
+                    <h1>제품</h1>
+                    <br>
+                    <p><strong>원하는 물품을 카테고리별로 편하게</strong></p>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 col-sm-6">
+                        <div class="single-service white-bg text-center">
+                            <img src="{%static 'main/img/book.jpg'%}">
+                            <h3>도서,필기구</h3>
+                            <p>#전공책#책
+                                <br>
+                                #펜 #노트
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="single-service white-bg text-center">
+                            <img src="{%static 'main/img/tum.jpg'%}">
+                            <h3>생활용품</h3>
+                            <p>#텀블러 #가방 #옷<br>
+                                #가습기 #냉장고
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="single-service white-bg text-center">
+                            <img src="{%static 'main/img/cook.jpg'%}">
+                            <h3>식료품</h3>
+                            <p>#즉석밥#라면<br>
+                                #김치 #채소
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="single-service white-bg text-center">
+                            <img src="{%static 'main/img/denamoo.jpg'%}">
+                            <h3>욕실용품</h3>
+                            <p>#칫솔 #비누
+                                <br>#샴푸
+                                <br></p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="single-service white-bg text-center">
+                            <img src="{%static 'main/img/stan.jpg'%}">
+                            <h3>주방용품</h3>
+                            <p>#스테인리스 냄비 #수세미 #세제<br>
+                                #도마 #일회용기
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="single-service white-bg text-center xs-service">
+                            <img src="{%static 'main/img/sleep.jpg'%}">
+                            <h3>이불</h3>
+                            <p>#이불 #담요
+                                <br>#인형
+                                <br></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

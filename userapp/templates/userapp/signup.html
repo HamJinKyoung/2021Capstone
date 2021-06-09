@@ -1,0 +1,38 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+<!-- CSS -->
+{% block css %}
+    <link rel="stylesheet" href="{%static 'main/css/layout/login.css'%}">
+{% endblock css%}
+
+<!-- 기본 Navbar 변형 로고누르면 홈으로 -->
+<!-- Content -->
+
+{% block content %}
+
+    {% if error %}
+        <h3 style="color:red">{{error}}</h3>
+    {% endif %}
+    <div class="signup">
+        <section id="gtco-welcome" class="bg-white section-padding">
+            <div class="contianer_login">
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="sc">
+                        {{ form.as_table }}</div>
+                    <br>
+                    <br>
+
+                    <a>
+                        <button type="submit" class="login_button">회원가입</button>
+                    </a>
+
+                </div>
+            </form>
+        </section>
+    </div>
+
+    <br><br><br>
+
+{% endblock content %}

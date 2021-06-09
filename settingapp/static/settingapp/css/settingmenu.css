@@ -1,0 +1,26 @@
+.br{
+   margin-bottom: 500px;
+}
+.card {
+    float: left;
+    margin-left: 35px;
+    margin-top: 10px;
+    width: 250px;
+}
+
+.btn-secondarybtn {
+    text-align: center;
+    width: 250px;
+    height: 200px;
+    font-size: 150px;
+    /* font-style: ; */
+}
+
+img {
+    width: 30px;
+    height: 200px;
+}
+
+.card>a{
+    margin-top: 120px;
+}

@@ -1,0 +1,55 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block css %}
+    <link
+        rel="stylesheet"
+        type="text/css"
+        href="{% static 'settingapp/css/settingmenu.css' %}"/>
+    <link rel="stylesheet" href="{%static 'main/css/layout/login.css'%}">
+    <link rel="stylesheet" href="{%static 'main/css/layout/product.css'%}">
+{% endblock css %}
+
+
+{% block content %}
+    <div class="product_user">
+        <div class="maincontainer">
+            <div class="card">
+                <a href="{% url 'addmenu' %}" type="button" class="btn btn-secondarybtn">+</a>
+            </div>
+            {% for menu in menus.all %}
+                {% if menu.user_id == user %}
+                    <div class="card">
+                        {% if menu.m_img %}
+                            <img src="{{menu.m_img.url}}" class="card-img-top" alt="..."/>
+                        {% endif %}
+                        <div class="card-body">
+                            <h5 class="card-title">{{ menu.m_name }}</h5>
+                            <div class="category">
+                                {% if menu.c_id == 1 %}
+                                    <p>도서,필기구</p>
+                                {% elif menu.c_id == 2 %}
+                                    <p>생활용품</p>
+                                {% elif menu.c_id == 3 %}
+                                    <p>식료품</p>
+                                {% elif menu.c_id == 4 %}
+                                    <p>욕실용품</p>
+                                {% elif menu.c_id == 5 %}
+                                    <p>주방용품</p>
+                                {% elif menu.c_id == 6 %}
+                                    <p>침구류</p>
+                                {% endif %}
+                            </div>
+
+                            <p class="card-text">{{ menu.m_info }}</p>
+                            <span class="price">{{ menu.m_price }}원</span>
+                            <!-- <a href="{% url 'editmenu' pk=menu.pk %}" class="btn btn-primary">수정</a>
+                            -->
+                            <a href="{% url 'delete' pk=menu.pk %}" class="btn btn-primary">삭제</a>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+ 
+{% endblock content %}

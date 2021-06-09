@@ -1,0 +1,49 @@
+.container_checkmenu {
+    width: 1000px;
+    padding-top: 150px;
+    padding-bottom: 150px;
+    margin: auto;
+}
+
+.menulist .alert-primary {
+    color: gray;
+    background-color: #BED95F;
+    /* border-color: #467302; */
+}
+
+.totalprice {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.totalprice .alert {
+    width: 80%;
+    font-size: x-large;
+    padding: 2rem;
+}
+
+.totalprice .alert-primary {
+    color: gray;
+    background-color: #E7F291;
+    /* border-color: #467302; */
+}
+
+.float-right {
+    float: right;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-around;
+    padding-left: 10rem;
+    padding-right: 10rem;
+}
+.button-container .btn {
+    margin: 2rem 3rem;
+}
+
+.ad-container {
+    margin-top: 3rem;
+}

@@ -1,0 +1,162 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="utf-8">
+		<!-- title img -->
+		<link rel="icon" type="image/gif/png" href="{%static 'main/img/logo.png'%}">
+        <title>savers</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+        <!-- bootstrap -->
+		<link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+		<!-- icon -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<!-- font -->
+		<link href="https://fonts.googleapis.com/css?family=Black+Han+Sans&display=swap&subset=korean" rel="stylesheet">
+		<!-- check -->
+		<link href='https://fonts.googleapis.com/css?family=Alegreya+Sans:300,400|Source+Sans+Pro:400,300' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+		
+		<!-- all css here -->
+		<link rel="stylesheet" href="{%static 'main/css/bootstrap.min.css'%}"> 
+		<!-- all css here -->
+		<link rel="stylesheet" href="{%static 'main/css/animate.css'%}">
+		<link rel="stylesheet" href="{%static 'main/css/style.css'%}">
+		<link rel="stylesheet" href="{%static 'main/css/all.css'%}">
+		<!-- bootstrap -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<link rel="stylesheet" href="{%static 'main/css/shortcode/shortcodes.css'%}">
+		
+        <!-- 페이지별 추가 CSS -->
+        {% block css %} {% endblock css %}
+
+        <title>Savers</title>
+    </head>
+
+        <!-- 기본 Navbar -->
+
+        <header style="background-color: white;">
+			<div class="header-area header-sticky">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-3 col-xs-12">
+							<div class="logo">
+								<!-- nav_logo -->
+								<a href="{%url 'home'%}">SAVERS</a>
+							</div>
+						</div>
+						<div class="col-md-9 col-xs-12">
+							<div class="main-menu text-right">
+								<nav>
+									<ul class="menu">
+										<!-- nav_home -->
+										<li><a href="{%url 'home'%}">HOME</a>
+										</li>
+										<!-- nav_board -->
+										<!-- <li><a href="#">board</a>
+										    <ul>
+												
+												<li><a href="#">notice</a></li>
+												
+												<li><a href="#">Q&A</a></li>
+											</ul>
+										</li> -->
+										<!-- nav_product -->
+										<li><a href="{%url 'menu'%}">product</a></li>
+										<!-- nav_logout 로그인이 되어있을때 -->
+                                        {% if user.is_authenticated %}
+										<!-- nav_mypage -->
+										<li><a href="{%url 'mypage'%}">mypage</a></li>
+										
+                                        <li><a href="{%url 'logout'%}">logout</a></li>
+                                        {% else %}	
+                                        <li><a href="{% url 'signup' %}">signup</a></li>
+                                        {% endif %}
+									</ul>
+								</nav>
+							</div>
+							<div class="mobile-menu"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+     
+
+        <!-- 페이지별 내용 들어갈 Content -->
+       <body style="background-color: #f4ede5; ">
+		<!-- 모든 html이 뜨는자리 -->
+       {%block content%}{%endblock%}
+		<!-- footer start -->
+		<footer class="footer-bg gray-bg ptb-90">
+			<div class="footer-area">
+				<div class="container">
+					<div class="footer-info text-center">
+						<div class="logo logo-style">
+							<a href="#">SAVERS</a>
+						</div>
+						<ul>
+							<li>Phone : 02 000 0000</li>
+							<li>Email : savers @ gmail.com</li>
+							<li>Address : skhu</li>
+						</ul>
+						<div class="social-icon mt-20">
+								<a href="https://www.facebook.com/"><i class="fa fa-facebook-square" style='font-size:20px; padding-top: 4px;'></i></a>
+								<a href="https://www.instagram.com/"><i class="fa fa-instagram" style='font-size:20px; padding-top: 4px;'></i></a>
+								<a href="https://www.youtube.com/"><i class="fa fa-youtube-play" style='font-size:20px; padding-top: 4px;'></i></a>
+							</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!-- footer end -->
+        <div id="toTop">
+            <i class="fa fa-chevron-up"></i>
+		</div>
+		
+		
+		<!-- js모음 -->
+		<script src="{%static 'main/js/loading.js' %}"></script>
+        <script src="{%static 'main/js/bootstrap.min.js' %}"></script>
+        <script src="{%static 'main/js/headroom.min.js' %}"></script>
+		<script src="{%static 'main/js/imagesloaded.pkgd.min.js' %}"></script>
+		<script src="{%static 'main/js/isotope.pkgd.min.js' %}"></script>
+        <script src="{%static 'main/js/jquery-1.12.0.min.js' %}"></script>
+        <script src="{%static 'main/js/jquery.appear.js' %}"></script>
+        <script src="{%static 'main/js/jquery.knob.js' %}"></script>
+        <script src="{%static 'main/js/jquery.meanmenu.js' %}"></script>
+        <script src="{%static 'main/js/main.js' %}"></script>
+        <script src="{%static 'main/js/modernizr-2.8.3.min.js' %}"></script>
+        <script src="{%static 'main/js/owl.carousel.min.js' %}"></script>
+		<script src="{%static 'main/js/plugins.js' %}"></script>
+		<script src="{%static 'main/js/select2.min.js' %}"></script>
+		<script src="{%static 'main/js/chart.js' %}"></script>
+		<script src="{%static 'main/js/Chart.min.js' %}"></script>
+		<script src="{%static 'main/js/vendor.bundle.base.js' %}"></script>
+
+		<!-- bootstrap js link -->
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+
+        <!-- Footer -->
+
+        <!-- Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+            integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+            integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+</html>

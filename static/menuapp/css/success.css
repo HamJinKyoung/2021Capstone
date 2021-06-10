@@ -1,5 +1,4 @@
 .container {
-    padding: 3rem;
     text-align: center;
     height: 100%;
 }
@@ -14,7 +13,7 @@ p {
 }
 
 h2 {
-    color: #ff9966;
+    color: green;
     font-size: 3rem;
     margin-top: 0.5rem;
 }

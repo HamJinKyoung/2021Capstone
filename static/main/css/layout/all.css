@@ -1,0 +1,21 @@
+.menu > .card{
+    width: 500px !important;
+    margin: auto;
+}
+.optionform{
+    width: 300px;
+    margin: auto;
+}
+.con{
+    font-size: 30px;
+}
+.container_layout{
+    background: #fff;
+    width: 700px;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+*{
+    font-family: 'Roboto Condensed', sans-serif !important;
+}

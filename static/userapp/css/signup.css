@@ -1,17 +1,14 @@
-.layout {
+/* .layout {
     display: flex;
     flex-direction: row;
     width: 100%;
-}
+} */
 
-.container {
-    padding: 4rem 25rem;
-    margin: auto;
-}
 
-form {
+/* form {
     text-align: center;
-}
+    padding-left: 50px;
+} */
 
 .signupbutton {
     justify-content: center;

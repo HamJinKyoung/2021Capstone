@@ -1,12 +1,12 @@
-.container {
+/* .container {
     padding: 5rem 10rem;
-}
+} */
 
 .alert-primary {
     color: black;
-    background-color: #ffb793;
+    background-color: green;
     /* border-color: #ff9966; */
-    border: 5px solid #ff9966;
+    border: 5px solid green;
     text-align: center;
 }
 .comment {
@@ -27,7 +27,7 @@ ul li {
 }
 
 .card {
-    border: 2px solid #ff9966;
+    border: 2px solid green;
 }
 
 ul li .card .card-img-top {

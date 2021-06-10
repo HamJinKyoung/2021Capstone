@@ -1,21 +1,26 @@
-.card{
+.br{
+   margin-bottom: 500px;
+}
+.card {
     float: left;
     margin-left: 35px;
     margin-top: 10px;
-    width: 340px;
-    height: 400px;
+    width: 250px;
 }
 
-.btn-secondarybtn{
+.btn-secondarybtn {
     text-align: center;
-    width: 340px;
-    height: 400px;
-    font-size: 200px;
-    font-style: ;
+    width: 250px;
+    height: 200px;
+    font-size: 150px;
+    /* font-style: ; */
 }
 
-.menu .card img {
-    width: 200px;
+img {
+    width: 30px;
     height: 200px;
-    margin-left: 60px;
+}
+
+.card>a{
+    margin-top: 120px;
 }

@@ -6,7 +6,7 @@ $(function () {
   'use strict';
   var doughnutPieData = {
     datasets: [{
-      data: [30, 40, 30],
+      data: [20,20,20,20,10,10],
       backgroundColor: [
         'rgba(255, 99, 132, 0.5)',
         'rgba(54, 162, 235, 0.5)',
@@ -27,9 +27,12 @@ $(function () {
 
     // These labels appear in the legend and in the tooltips when hovering different arcs
     labels: [
-      '빨대',
-      '텀블러',
-      '장바구니',
+      '식료품',
+      '침구류',
+      '욕실용품',
+      '주방용품',
+      '생활용품',
+      '도서,필기구',
     ]
   };
   var doughnutPieOptions = {

@@ -5,10 +5,11 @@
   }
   
 .container {
-    padding: 8rem 15rem;
+    /* padding: 8rem 15rem; */
     text-align: center;
     height: 100%;
   }
+  
 
 .buttons{
     margin-top: 100px;
@@ -38,15 +39,15 @@ form{
 
 .input-style {
   text-align: left;
-  color: #ff9966;
-  border: 1px solid #ff9966;
+  color: green;
+  border: 1px solid green;
 }
 
 .input-style::placeholder {
-    color: #ff9966;
+    color: green;
 }
 
 label{
   font-size: 20px;
-  color: #ff9966;
+  color: green;
 }

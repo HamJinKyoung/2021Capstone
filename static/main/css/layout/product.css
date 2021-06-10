@@ -7,25 +7,17 @@
 input[type="submit"] {
     font-family: FontAwesome;
 }
-.b_center{
-    margin-left: 300px;
-}    
-input {
-    background: #eceff8;
-    border: 2px solid #eceff8;
-    /* height: 45px; */
-    box-shadow: none;
-    /* padding-left: 10px; */
-    font-size: 14px;
-    color: #626262;
-    /* width: 100%; */
+
+input{
+    background-color: white;
+    border: 0;
 }
 
 img{
-    width: 19em;
+    /* width: 19em; */
     height: 19em;
     margin-bottom: 1em;
-    margin-top: 1em;
+    /* margin-top: 1em; */
 }
 
 .single-service > h3{
@@ -80,7 +72,7 @@ p{
 
 .category{
     width:200px;
-    margin-left:30px;
+    /* margin-left:30px; */
 }
 
 /* .container_product{
@@ -92,12 +84,14 @@ p{
     margin-bottom: 3em;
     display: flex;
     flex-direction: row;
+    padding-left: 20px;
 }
 
 .pu_row{
     flex-direction: column;
     flex: 0 0 100px;
     margin-top: 1.5em;
+    margin-left: 2em;
 }
 
 .pu_row:nth-child(2){

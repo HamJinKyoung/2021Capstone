@@ -1,11 +1,14 @@
-.container {
-    padding-top: 2rem;
+.container_checkmenu {
+    width: 1000px;
+    padding-top: 150px;
+    padding-bottom: 150px;
+    margin: auto;
 }
 
 .menulist .alert-primary {
-    color: black;
-    background-color: #ff9966;
-    border-color: #ffb793;
+    color: gray;
+    background-color: #BED95F;
+    /* border-color: #467302; */
 }
 
 .totalprice {
@@ -22,9 +25,9 @@
 }
 
 .totalprice .alert-primary {
-    color: black;
-    background-color: #ffb793;
-    border-color: #ff9966;
+    color: gray;
+    background-color: #E7F291;
+    /* border-color: #467302; */
 }
 
 .float-right {
@@ -38,7 +41,7 @@
     padding-right: 10rem;
 }
 .button-container .btn {
-    padding: 0.5rem 3rem;
+    margin: 2rem 3rem;
 }
 
 .ad-container {

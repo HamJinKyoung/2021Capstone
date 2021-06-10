@@ -229,7 +229,7 @@ textarea {
         Input
 *************************/
 
-input {
+/* input {
     background: #eceff8;
     border: 2px solid #eceff8;
     height: 45px;
@@ -238,7 +238,7 @@ input {
     font-size: 14px;
     color: #626262;
     width: 100%;
-}
+} */
 select {
     width: 100%;
     background: #eceff8;
